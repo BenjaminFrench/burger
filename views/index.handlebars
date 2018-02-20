@@ -2,19 +2,32 @@
     
     <div class="col-md-12">
         <div class="row">
-            <img id="burger-title-img" src="../assets/img/burger.png" class="img-fluid" alt="Responsive image" height="100px">
+            <div id="title-box">
+                <img id="burger-title-img" src="../assets/img/burger.png" class="img-fluid" alt="Responsive image" height="100px">
+                <h2 id="title-text">Eat Da Burger</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div id="add-burger">
+                <form id="add-burger-form" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control mb-2 mr-sm-2" id="burger-name" placeholder="Add a burger!">
+                        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-6">
-            <div class="card">
+            <div>
                 <h2>Burgers!</h2>
-                <ul>
+                <ul class="list-group">
                 {{#each burgers}}
                     {{#unless devoured}}
-                        <li>
-                            {{id}} {{burger_name}}<button data-id="{{id}}" class="change-devour">Devour</button>
+                        <li class="list-group-item">
+                            {{burger_name}}<button data-id="{{id}}" class="change-devour btn btn-danger btn-sm">Devour</button>
                         </li>
                     {{/unless}}
                 {{/each}}
@@ -22,13 +35,13 @@
             </div>
         </div>
         <div class="col-md-6">
-            <div class="card">
+            <div>
                 <h2>Devoured Burgers</h2>
-                <ul>
+                <ul class="list-group">
                 {{#each burgers}}
                     {{#if devoured}}
-                        <li>
-                            {{id}} {{burger_name}}<button data-id="{{id}}" class="change-devour">Devour</button>
+                        <li class="list-group-item">
+                            {{burger_name}}
                         </li>
                     {{/if}}
                 {{/each}}
@@ -38,14 +51,9 @@
 
     </div>
 
-    <h2>Add a Burger</h2>
-    <form id="add-burger-form">
-        <div class="form-group">
-            <label for="burger-name">Burger name:</label>
-            <input type="text" class="form-control" id="burger-name">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-    </form>
+    
+
+    
 </div>
 
 <script>

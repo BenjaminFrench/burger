@@ -1,7 +1,32 @@
-#burger-title-img {
-    height: 100px;
-    display:block;
-    margin:auto;
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    background-color: #ffa500;
+}
+
+#title-box {
+    display: block;
+    margin: auto;
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 0px;
+    font-family: 'Bungee Shade', cursive;
+}
+
+#burger-title-img {
+    display: block;
+    height: 100px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.change-devour {
+    float: right;
+}
+
+#add-burger {
+    margin: auto;
+    margin-bottom: 10px;
 }
