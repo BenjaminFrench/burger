@@ -17,6 +17,11 @@ var burger = {
         orm.updateOne("burgers", set, condition, function (res) {
             callback(res);
         });
+    },
+    updateAll: function (set, callback) {
+        orm.updateAll("burgers", set, function (res) {
+            callback(res);
+        });
     }
 };
 

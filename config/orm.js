@@ -25,6 +25,17 @@ var orm = {
                 callback(result);
             }
         );
+    },
+    updateAll: function (table, set, callback) {
+        var queryString =
+            "UPDATE ?? SET ?";
+
+        connection.query(queryString, [table, set],
+            function (err, result) {
+                if (err) throw err;
+                callback(result);
+            }
+        );
     }
 };
 
