@@ -1,24 +1,39 @@
 <div class="container">
     
-    <div class="row">
-        <div class="jumbotron">
-            <h1 class="display-4">Eat Da Burger!</h1>
+    <div class="col-md-12">
+        <div class="row">
+            <img id="burger-title-img" src="../assets/img/burger.png" class="img-fluid" alt="Responsive image" height="100px">
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-6">
-            <h2>Burgers!</h2>
-            {{#each burgers}}
-            <ul>
-                <li>
-                    {{id}} {{burger_name}}<button data-id="{{id}}" class="change-devour">Devour</button>
-                </li>
-            </ul>
-            {{/each}}
+            <div class="card">
+                <h2>Burgers!</h2>
+                <ul>
+                {{#each burgers}}
+                    {{#unless devoured}}
+                        <li>
+                            {{id}} {{burger_name}}<button data-id="{{id}}" class="change-devour">Devour</button>
+                        </li>
+                    {{/unless}}
+                {{/each}}
+                </ul>
+            </div>
         </div>
         <div class="col-md-6">
-            <h2>Devoured Burgers</h2>
+            <div class="card">
+                <h2>Devoured Burgers</h2>
+                <ul>
+                {{#each burgers}}
+                    {{#if devoured}}
+                        <li>
+                            {{id}} {{burger_name}}<button data-id="{{id}}" class="change-devour">Devour</button>
+                        </li>
+                    {{/if}}
+                {{/each}}
+                </ul>
+            </div>
         </div>
 
     </div>
