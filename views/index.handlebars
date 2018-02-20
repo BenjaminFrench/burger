@@ -1,21 +1,38 @@
-<h1>Burgers!</h1>
-
-<h2>Burgers!</h2>
-{{#each burgers}}
-    <ul>
-        <li>{{id}} {{burger_name}} <button data-id="{{id}}" class="change-devour">Devour</button></li>
-    </ul>
-{{/each}}
-<h2>Devoured Burgers</h2>
-
-<h2>Add a Burger</h2>
-<form id="add-burger-form">
-    <div class="form-group">
-        <label for="burger-name">Burger name:</label>
-        <input type="text" class="form-control" id="burger-name">
+<div class="container">
+    
+    <div class="row">
+        <div class="jumbotron">
+            <h1 class="display-4">Eat Da Burger!</h1>
+        </div>
     </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-</form>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Burgers!</h2>
+            {{#each burgers}}
+            <ul>
+                <li>
+                    {{id}} {{burger_name}}<button data-id="{{id}}" class="change-devour">Devour</button>
+                </li>
+            </ul>
+            {{/each}}
+        </div>
+        <div class="col-md-6">
+            <h2>Devoured Burgers</h2>
+        </div>
+
+    </div>
+
+    <h2>Add a Burger</h2>
+    <form id="add-burger-form">
+        <div class="form-group">
+            <label for="burger-name">Burger name:</label>
+            <input type="text" class="form-control" id="burger-name">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>
+
 <script>
     $("#add-burger-form").on("submit", function (event) {
         // Make sure to preventDefault on a submit event.
@@ -51,7 +68,7 @@
             data: newDevouredState
         }).then(
             function () {
-                console.log("changed devoured to", newSleep);
+                console.log("changed devoured to", newDevouredState);
                 // Reload the page to get the updated list
                 location.reload();
             }

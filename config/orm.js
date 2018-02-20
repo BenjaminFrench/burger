@@ -17,9 +17,9 @@ var orm = {
     },
     updateOne: function (table, set, condition, callback) {
         var queryString =
-            "UPDATE burgers SET devoured = false where id = 1";
+            "UPDATE ?? SET ? where ?";
 
-        connection.query(queryString,
+        connection.query(queryString, [table, set, condition],
             function (err, result) {
                 if (err) throw err;
                 callback(result);
